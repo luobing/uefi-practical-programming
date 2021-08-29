@@ -37,7 +37,7 @@ UEFI的推出，改变了一切。以C语言为主的开发方式，降低了学
 *  :file_folder:  **/chap12**  第12章用到的文件，UEFI的ARM编译环境用到的批处理文件。
 *  :file_folder:  **/RobinPkg**  各章节的示例程序，包括UEFI应用和UEFI驱动，共计29个示例，均在此文件夹下。
 *  :file_folder:  **/RobinPkg生成文件**   为方便实验，笔者将RobinPkg中的示例编译好了。分为IA32和X64两种，可以直接使用。
-*  :page_facing_up:  [勘误.md](https://gitee.com/luobing4365/uefi-practical-programming/blob/master/%E5%8B%98%E8%AF%AF.md)  对《UEFI编程实践》的勘误记录 
+*  :page_facing_up:  [勘误.md](https://github.com/luobing/uefi-practical-programming/blob/main/%E5%8B%98%E8%AF%AF.md)  对《UEFI编程实践》的勘误记录 
 
 ## 使用教程
 
