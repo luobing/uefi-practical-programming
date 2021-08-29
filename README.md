@@ -63,6 +63,7 @@ RobinPkg中的代码，笔者是在以下环境下编译通过的：
 
 大致的步骤如下：<br>
 :low_brightness: 1. 安装必要的开发工具，包括Visual Studio、Python、ASL和NASM编译器，并设置PATH路径；
+
 :low_brightness: 2. 新建工作目录MyWorkspace，将必要的代码库下载到本地，主要是EDK2和StdLib库（也即EADK）：
 
 ```
