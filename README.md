@@ -76,7 +76,7 @@ $ git clone https://github.com/tianocore/edk2-libc.git
 
 ```
 Administrator@robin MINGW64 /c/MyWorkspace/edk2
-git submodule update --init
+$ git submodule update --init
 ```
 
 打开VS2015 x86 Native Tools Command Prompt,进行编译：
