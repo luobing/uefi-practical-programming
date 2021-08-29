@@ -124,7 +124,7 @@ C:\edk202011\edk2> build -p RobinPkg\RobinPkg.dsc -m RobinPkg\Applications\pixel
 ## 其他说明
 在编写本书的过程中，笔者尽量做到每句话都言之有据。但是学识有限，书中可能出现错误和不准确的介绍，恳请读者批评指正。如果发现本书的任何错误，或者有任何的建议，请发邮件至：
 
- :email: [uefi_explorer@163.com](uefi_explorer@163.com)
+  :email:<a href=mailto:uefi_explorer@163.com>email to: uefi_explorer@163.com</a>
 
 对于UEFI开发的探索，以及其他技术的探索，是永无止境的。平常的工作学习中，笔者会不定期的更新博客和专栏，有兴趣的读者，可以关注：
 
