@@ -1,0 +1,54 @@
+## @file
+#   A simple, basic, application showing how the Hello application could be
+#   built using the "Standard C Libraries" from StdLib.
+#
+#  Copyright (c) 2010 - 2011, Intel Corporation. All rights reserved.<BR>
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution. The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = CppMain
+  FILE_GUID                      = 4ea97c46-7491-4efd-b442-74e011f3ce5f
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  CppMain.cpp
+  crt0support.cpp
+  Cppglobal.h
+[Packages]
+  StdLib/StdLib.dec
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio
+  DevShell
+
+  BaseMemoryLib
+  ShellLib
+  ShellCEntryLib
+  UefiBootServicesTableLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+  
+[Protocols]
+  gEfiSimpleTextInputExProtocolGuid             ## CONSUMES
+[BuildOptions]
+# MSFT:*_*_IA32_CC_FLAGS  = /Oi- /wd4804 
+  # MSFT: *_*_IA32_CC_FLAGS == /nologo /arch:IA32 /c /WX /GS- /W3 /Gs32768 /D UNICODE /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /Gw /Zc:wchar_t-
+  # MSFT:*_*_*_CC_FLAGS = /wd4804 
+  MSFT:*_*_*_CC_FLAGS == /nologo /arch:IA32 /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1b2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /Gw /wd4804

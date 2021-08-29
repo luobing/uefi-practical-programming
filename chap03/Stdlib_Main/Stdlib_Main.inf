@@ -1,0 +1,30 @@
+## @file
+#  Sample UEFI Application Reference EDKII Module.
+#
+#  This is a sample shell application that will print Hello,this is Entry of main!" to the
+#  UEFI Console.
+#
+##
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = Stdlib_Main
+  FILE_GUID                      = 4ea97c46-1491-4dfd-b412-747010f31e5f
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  Stdlib_Main.c
+
+[Packages]
+  StdLib/StdLib.dec
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio

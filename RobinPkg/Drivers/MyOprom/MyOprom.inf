@@ -1,0 +1,92 @@
+#/** @file
+#    
+#  Scsi Disk driver. This driver detects the Scsi disk media and installs Block I/O Protocol
+#  on the device handle that holds the SCSI I/O Portocol.
+#  
+#  Copyright (c) 2006 - 2011, Intel Corporation. <BR>
+#  All rights reserved. This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution.  The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php
+#  
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#  
+#**/
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MyOprom
+  FILE_GUID                      = 0A8830B50-5822-4312-99D8-D0DCAED583C3
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+  UNLOAD_IMAGE                   = DefaultUnload
+
+  PCI_VENDOR_ID = 0x1C00
+  PCI_DEVICE_ID = 0x4349
+#  PCI_CLASS_CODE = 0x018000
+  PCI_CLASS_CODE = 0x020000
+  PCI_REVISION = 0x0003
+  PCI_COMPRESS = TRUE
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF EBC
+#
+#  DRIVER_BINDING                =  gSampleDrvDriverBinding
+#  COMPONENT_NAME                =  gSampleDrvComponentName
+#  COMPONENT_NAME2               =  gSampleDrvComponentName2
+#
+
+[Sources.common]
+  ComponentName.c
+  BlankDrv.c
+  BlankDrv.h
+  Common.c
+  Common.h
+  Keyboard.c
+  Keyboard.h
+  Graphic.c
+  Graphic.h 
+  Font.c
+  Font.h
+  Window.c 
+  Window.h 
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  UefiLib
+  UefiDriverEntryPoint
+  DebugLib
+  IoLib
+
+[Protocols]
+  gEfiHiiImageProtocolGuid
+  gEfiHiiImageExProtocolGuid
+  gEfiHiiImageDecoderProtocolGuid
+  gEfiRngProtocolGuid
+  gEfiBlockIoProtocolGuid                       ## BY_START
+  gEfiPciIoProtocolGuid                         ## TO_START
+  gEfiSimpleTextInProtocolGuid                  # PROTOCOL BY_START
+  gEfiSimpleTextInputExProtocolGuid             ## CONSUMES
+  gEfiGraphicsOutputProtocolGuid
+  gEfiSimplePointerProtocolGuid
+
+	gEfiPciRootBridgeIoProtocolGuid  ## BY_START
+	
+
+
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiSerialIoProtocolGuid
+  
+[BuildOptions]
+  MSFT:*_*_IA32_CC_FLAGS  = /Oi-
+  MSFT:*_*_*_CC_FLAGS = /utf-8
+

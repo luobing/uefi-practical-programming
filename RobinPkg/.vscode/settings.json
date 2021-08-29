@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "filerw.h": "c",
+        "pcirw.h": "c",
+        "serialport.h": "c",
+        "graphic.h": "c",
+        "keyboard.h": "c",
+        "common.h": "c",
+        "blankdrv.h": "c"
+    }
+}

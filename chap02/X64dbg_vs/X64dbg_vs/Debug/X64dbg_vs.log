@@ -1,0 +1,11 @@
+﻿  系统找不到指定的路径。
+  'edksetup.bat' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
+  'build.bat' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(41,5): error MSB3073: The command "
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(41,5): error MSB3073: cd /D C:\UEFIWorkspace\edk2
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(41,5): error MSB3073: set WORKSPACE=C:\UEFIWorkspace\edk2
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(41,5): error MSB3073: call edksetup.bat
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(41,5): error MSB3073: call build.bat -p EmulatorPkg\EmulatorPkg.dsc -a X64 -m MdeModulePkg\Application\HelloWorld\HelloWorld.inf -b DEBUG 
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.MakeFile.Targets(41,5): error MSB3073: " exited with code 1.

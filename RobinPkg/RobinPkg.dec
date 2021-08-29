@@ -1,0 +1,22 @@
+## @file
+#   Declarations for the UDK Standard Libraries.
+#
+# Copyright (c) 2019 - 2039, Robin . All rights reserved.<BR>
+#
+##
+
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = RobinPkg
+  PACKAGE_GUID                   = B3E3D3E5-D62B-44A7-AC75-264F389D127E
+  PACKAGE_VERSION                = 0.01
+
+
+# [Guids]
+
+
+
+# [PcdsFixedAtBuild]
+
+

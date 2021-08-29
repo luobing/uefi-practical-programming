@@ -1,0 +1,88 @@
+## @file
+#  A simple, basic, EDK II native, "hello" application.
+#
+#   Copyright (c) 2010, Intel Corporation. All rights reserved.<BR>
+#   This program and the accompanying materials
+#   are licensed and made available under the terms and conditions of the BSD License
+#   which accompanies this distribution. The full text of the license may be found at
+#   http://opensource.org/licenses/bsd-license.
+#
+#   THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = MyGuiFrame
+  FILE_GUID                      = a912f198-7f1a-4813-b308-c75db806ec84
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  MyGuiFrame.c
+  MyGUI.c
+  MyGUI.h
+  Common.c
+  Common.h
+  FileRW.c
+  FileRW.h
+  Keyboard.c
+  Keyboard.h
+  Mouse.c
+  Mouse.h
+  Font.c
+  Font.h
+  GUIPIC.c
+  GUIPIC.h
+  Pictures.c
+  Pictures.h
+  Graphic.c
+  Graphic.h 
+  Window.c 
+  Window.h 
+
+[Packages]
+  StdLib/StdLib.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio
+  DevShell
+
+  UefiLib
+  ShellCEntryLib
+  FileHandleLib
+# for bmp
+	DxeServicesLib
+	DevicePathLib
+  UefiBootServicesTableLib
+  PcdLib
+  UefiRuntimeServicesTableLib
+  HiiLib
+
+[Protocols]
+  gEfiSimpleTextInputExProtocolGuid             ## CONSUMES
+  gEfiSimplePointerProtocolGuid
+  gEfiGraphicsOutputProtocolGuid
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  
+  gEfiPciIoProtocolGuid    ## BY_START
+	gEfiPciRootBridgeIoProtocolGuid  ## BY_START
+  gEfiHiiImageExProtocolGuid
+  gEfiHiiImageDecoderProtocolGuid
+
+  gEfiRngProtocolGuid
+
+  [BuildOptions]
+  MSFT:*_*_IA32_CC_FLAGS  = /Oi-
+  MSFT:*_*_*_CC_FLAGS = /utf-8

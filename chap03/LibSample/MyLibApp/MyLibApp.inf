@@ -1,0 +1,31 @@
+## @file
+#  Sample UEFI Application Reference EDKII Module.
+#
+#  This is a sample shell application that will call Libfunction(a function of MyLibrary)and print 
+#  string to the console device.
+#
+##
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = MyLibApp
+  FILE_GUID                      = 4ea92c46-1491-4dfd-c412-747013f31e5f
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  MyLibApp.c
+
+[Packages]
+  StdLib/StdLib.dec
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio
+  MyLibraryLib

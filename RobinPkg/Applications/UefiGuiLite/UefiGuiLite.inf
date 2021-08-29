@@ -1,0 +1,77 @@
+## @file
+#   A simple, basic, application showing how the Hello application could be
+#   built using the "Standard C Libraries" from StdLib.
+#
+#  Copyright (c) 2010 - 2011, Intel Corporation. All rights reserved.<BR>
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution. The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = UefiGuiLite
+  FILE_GUID                      = 4ea97c56-7491-5eed-b4a2-743011f3ce5f
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  UefiGuiLite.cpp
+  UIcode.cpp
+  GuiLite.h
+  _DengXian_36B.cpp
+  Consolas_19.cpp
+  grass_bmp.cpp
+  humidity_bmp.cpp
+  temperature_bmp.cpp
+  weather_bmp.cpp
+  crt0data.cpp
+  Cppglobal.h
+  Common.c
+  Common.h
+  Graphic.c
+  Graphic.h 
+  Window.c
+  Window.h
+[Packages]
+  StdLib/StdLib.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  LibC
+  LibStdio
+  DevShell
+  LibMath  #for cos sin...
+
+  BaseMemoryLib
+  ShellLib
+  ShellCEntryLib
+  UefiBootServicesTableLib
+  UefiLib
+  UefiRuntimeServicesTableLib
+  
+[Protocols]
+  gEfiSimpleTextInputExProtocolGuid             ## CONSUMES
+  gEfiSimplePointerProtocolGuid
+  gEfiPciIoProtocolGuid    ## BY_START
+	gEfiPciRootBridgeIoProtocolGuid  ## BY_START
+  gEfiHiiImageExProtocolGuid
+  gEfiHiiImageDecoderProtocolGuid
+
+  gEfiRngProtocolGuid
+
+[BuildOptions]
+# MSFT:*_*_IA32_CC_FLAGS  = /Oi- /wd4804 
+  MSFT:*_*_*_CC_FLAGS = /wd4804 
+  MSFT:*_*_*_CC_FLAGS = /utf-8
