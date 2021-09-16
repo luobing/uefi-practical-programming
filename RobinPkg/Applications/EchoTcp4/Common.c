@@ -16,15 +16,15 @@ EFI_GRAPHICS_OUTPUT_PROTOCOL       *gGraphicsOutput;
 EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL   *gPCIRootBridgeIO;
 EFI_PCI_IO_PROTOCOL *gPCIIO;
 
-EFI_SIMPLE_FILE_SYSTEM_PROTOCOL *gSimpleFileSystem;  //����FAT�ļ�ϵͳ�ľ��
-EFI_FILE_PROTOCOL *gFileRoot;		//�����ļ��ľ��
+EFI_SIMPLE_FILE_SYSTEM_PROTOCOL *gSimpleFileSystem;  //
+EFI_FILE_PROTOCOL *gFileRoot;		//
 EFI_RNG_PROTOCOL *gRNGOut;			//Handle of Generating random number 2019-08-31 11:36:43 robin
 
 //================  Member function =======================================
 //Name:InintGloabalProtocols
 //Input:
-//Output: 0: ����protocol������ȡ
-//				����: ����Ӧλ��־��protocolû�б���ȷ��ȡ
+//Output: 0: 所有protocol都被获取
+//		非零: 所对应位标志的protocol没有被正确获取
 //        
 //Descriptor:
 UINT64 InintGloabalProtocols(UINT64 flag)
@@ -228,7 +228,7 @@ EFI_STATUS LocateFileRoot(void)
 	 Status = gBS->LocateProtocol(
             &gEfiSimpleFileSystemProtocolGuid,
             NULL,
-            (VOID**)&gSimpleFileSystem //ʵ�ʳ������ò���������Ԥ��������ӿ� 2019-06-10 19:51:02 luobing
+            (VOID**)&gSimpleFileSystem //
     );
     if (EFI_ERROR(Status)) {
      //δ�ҵ�EFI_SIMPLE_FILE_SYSTEM_PROTOCOL
